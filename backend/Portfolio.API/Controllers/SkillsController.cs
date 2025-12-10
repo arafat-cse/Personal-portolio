@@ -1,0 +1,53 @@
+using Microsoft.AspNetCore.Mvc;
+using Portfolio.API.Models;
+
+namespace Portfolio.API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SkillsController : ControllerBase
+    {
+        private static List<Skill> _skills = new List<Skill>
+        {
+            new Skill { Id = 1, Name = "Angular", Category = "Frontend", Proficiency = 90 },
+            new Skill { Id = 2, Name = "C#", Category = "Backend", Proficiency = 85 }
+        };
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Skill>> GetSkills()
+        {
+            return Ok(_skills);
+        }
+
+        [HttpPost]
+        public ActionResult<Skill> AddSkill(Skill skill)
+        {
+            skill.Id = _skills.Max(s => s.Id) + 1;
+            _skills.Add(skill);
+            return CreatedAtAction(nameof(GetSkills), new { id = skill.Id }, skill);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateSkill(int id, Skill skill)
+        {
+            var existingSkill = _skills.FirstOrDefault(s => s.Id == id);
+            if (existingSkill == null) return NotFound();
+
+            existingSkill.Name = skill.Name;
+            existingSkill.Category = skill.Category;
+            existingSkill.Proficiency = skill.Proficiency;
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteSkill(int id)
+        {
+            var skill = _skills.FirstOrDefault(s => s.Id == id);
+            if (skill == null) return NotFound();
+
+            _skills.Remove(skill);
+            return NoContent();
+        }
+    }
+}

@@ -1,0 +1,104 @@
+<nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <a routerLink="/" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                Portfolio
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a routerLink="/" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Home
+                </a>
+                <a routerLink="/about" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    About
+                </a>
+                <a routerLink="/skills" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Skills
+                </a>
+                <a routerLink="/projects" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Projects
+                </a>
+                <a routerLink="/experience" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Experience
+                </a>
+                <a routerLink="/certificates" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Certificates
+                </a>
+                <a routerLink="/contact" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button (click)="toggleMobileMenu()" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        @if (!isMobileMenuOpen) {
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                        } @else {
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                        }
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    @if (isMobileMenuOpen) {
+    <div class="md:hidden bg-white dark:bg-gray-800 shadow-lg absolute top-16 left-0 w-full z-40">
+        <div class="flex flex-col px-4 py-2 space-y-2">
+            <a routerLink="/" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Home
+            </a>
+            <a routerLink="/about" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                About
+            </a>
+            <a routerLink="/skills" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Skills
+            </a>
+            <a routerLink="/projects" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Projects
+            </a>
+            <a routerLink="/experience" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Experience
+            </a>
+            <a routerLink="/certificates" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Certificates
+            </a>
+            <a routerLink="/contact" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Contact
+            </a>
+        </div>
+    </div>
+    }
+    </div>
+    </div>
+</nav>
