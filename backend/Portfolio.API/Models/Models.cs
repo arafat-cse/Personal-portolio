@@ -5,7 +5,7 @@ namespace Portfolio.API.Models
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Category { get; set; } = string.Empty; // Frontend, Backend, Tools
-        public int Proficiency { get; set; }
+        public int Proficiency { get; set; } // 0-100
     }
 
     public class Project
@@ -15,8 +15,8 @@ namespace Portfolio.API.Models
         public string Description { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
         public List<string> Technologies { get; set; } = new List<string>();
-        public string? DemoUrl { get; set; }
-        public string? GithubUrl { get; set; }
+        public string DemoUrl { get; set; } = string.Empty;
+        public string GithubUrl { get; set; } = string.Empty;
     }
 
     public class Experience
@@ -24,10 +24,8 @@ namespace Portfolio.API.Models
         public int Id { get; set; }
         public string Role { get; set; } = string.Empty;
         public string Company { get; set; } = string.Empty;
-        public string Location { get; set; } = string.Empty;
-        public DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public List<string> Description { get; set; } = new List<string>();
+        public string Duration { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
         public List<string> Technologies { get; set; } = new List<string>();
     }
 
@@ -36,18 +34,26 @@ namespace Portfolio.API.Models
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Issuer { get; set; } = string.Empty;
-        public DateTime Date { get; set; }
-        public string CredentialUrl { get; set; } = string.Empty;
-        public string? ImageUrl { get; set; }
+        public string Date { get; set; } = string.Empty;
+        public string VerifyUrl { get; set; } = string.Empty;
     }
 
     public class ContactMessage
     {
-        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Subject { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
-        public DateTime SentAt { get; set; } = DateTime.UtcNow;
+    }
+
+    public class Profile
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string Bio { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Location { get; set; } = string.Empty;
+        public string Greeting { get; set; } = string.Empty;
+        public string HeroDescription { get; set; } = string.Empty;
     }
 }

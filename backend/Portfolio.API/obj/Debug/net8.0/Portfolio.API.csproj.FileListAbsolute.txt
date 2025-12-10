@@ -133,3 +133,4 @@
 /var/www/html/Personal-portolio/backend/Portfolio.API/obj/Debug/net8.0/Portfolio.API.pdb
 /var/www/html/Personal-portolio/backend/Portfolio.API/obj/Debug/net8.0/Portfolio.API.genruntimeconfig.cache
 /var/www/html/Personal-portolio/backend/Portfolio.API/obj/Debug/net8.0/ref/Portfolio.API.dll
+/var/www/html/Personal-portolio/backend/Portfolio.API/obj/Debug/net8.0/Portfolio.API.sourcelink.json
