@@ -72,21 +72,6 @@
             }
         </div>
 
-        <!-- Activity Graph Placeholder (Optional visual filler) -->
-        <div class="mt-20 max-w-4xl mx-auto text-center">
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-8">Recent Activity</h3>
-            <div
-                class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
-                <div class="flex items-end justify-between h-32 gap-2">
-                    @for (height of [40, 60, 30, 80, 50, 90, 70, 40, 60, 85, 45, 95, 30, 50, 70]; track $index) {
-                    <div class="w-full bg-indigo-100 dark:bg-indigo-900/30 rounded-t-lg relative group">
-                        <div class="absolute bottom-0 left-0 w-full bg-indigo-500 rounded-t-lg transition-all duration-500 group-hover:bg-purple-500"
-                            [style.height.%]="height"></div>
-                    </div>
-                    }
-                </div>
-                <p class="text-gray-500 dark:text-gray-400 text-sm mt-4">Consistent problem solving across platforms</p>
-            </div>
-        </div>
+
     </div>
 </section>
