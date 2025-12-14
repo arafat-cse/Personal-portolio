@@ -17,6 +17,7 @@ namespace Portfolio.API.Models
         public List<string> Technologies { get; set; } = new List<string>();
         public string DemoUrl { get; set; } = string.Empty;
         public string GithubUrl { get; set; } = string.Empty;
+        public string Category { get; set; } = string.Empty;
     }
 
     public class Experience

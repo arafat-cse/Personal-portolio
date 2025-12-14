@@ -15,7 +15,7 @@ export class DashboardComponent {
   showProjectModal = false;
 
   newSkill: Skill = { id: 0, name: '', category: 'Frontend', proficiency: 50 };
-  newProject: Project = { id: 0, title: '', description: '', imageUrl: '', technologies: [] };
+  newProject: Project = { id: 0, title: '', description: '', imageUrl: '', technologies: [], category: 'Website' };
   projectTechInput = '';
 
   constructor(
@@ -56,7 +56,7 @@ export class DashboardComponent {
       next: (res) => {
         alert('Project added successfully!');
         this.closeProjectModal();
-        this.newProject = { id: 0, title: '', description: '', imageUrl: '', technologies: [] };
+        this.newProject = { id: 0, title: '', description: '', imageUrl: '', technologies: [], category: 'Website' };
         this.projectTechInput = '';
       },
       error: (err) => alert('Failed to add project')

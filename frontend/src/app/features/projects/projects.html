@@ -6,8 +6,18 @@
             <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-indigo-600 rounded-full"></span>
         </h2>
 
+        <div class="flex justify-center space-x-4 mb-12">
+            @for (category of categories; track category) {
+            <button (click)="setCategory(category)"
+                [class]="selectedCategory() === category ? 'bg-indigo-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'"
+                class="px-6 py-2 rounded-full font-semibold shadow-md transition duration-300 focus:outline-none">
+                {{ category }}
+            </button>
+            }
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @for (project of projects(); track project.id) {
+            @for (project of filteredProjects(); track project.id) {
             <div
                 class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 flex flex-col h-full">
                 <div class="relative overflow-hidden group h-48">
