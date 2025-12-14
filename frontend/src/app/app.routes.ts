@@ -13,6 +13,7 @@ import { ContactComponent } from './features/contact/contact';
 import { ExperienceComponent } from './features/experience/experience';
 import { HomeComponent } from './features/home/home';
 import { MainLayoutComponent } from './features/main-layout/main-layout';
+import { ProblemSolvingComponent } from './features/problem-solving/problem-solving.component';
 import { ProjectsComponent } from './features/projects/projects';
 import { SkillsComponent } from './features/skills/skills';
 
@@ -27,6 +28,7 @@ export const routes: Routes = [
       { path: 'skills', component: SkillsComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'experience', component: ExperienceComponent },
+      { path: 'problem-solving', component: ProblemSolvingComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'certificates', component: CertificatesComponent },
     ]
