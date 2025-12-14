@@ -18,13 +18,13 @@ export class SkillsService {
   private apiUrl = 'http://localhost:5000/api/skills';
 
   private skills: Skill[] = [
-    { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90 },
-    { id: 2, name: 'React.js', category: 'Frontend', proficiency: 85 },
-    { id: 3, name: 'ASP.NET', category: 'Backend', proficiency: 85 },
-    { id: 4, name: 'C#', category: 'Backend', proficiency: 90 },
-    { id: 5, name: 'Node.js', category: 'Backend', proficiency: 80 },
-    { id: 6, name: 'Laravel', category: 'Backend', proficiency: 75 },
-    { id: 7, name: 'VPS Server', category: 'Tools', proficiency: 70 }
+    { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+    { id: 2, name: 'React.js', category: 'Frontend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { id: 3, name: 'ASP.NET', category: 'Backend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
+    { id: 4, name: 'C#', category: 'Backend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+    { id: 5, name: 'Node.js', category: 'Backend', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { id: 6, name: 'Laravel', category: 'Backend', proficiency: 75, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+    { id: 7, name: 'VPS Server', category: 'Tools', proficiency: 70, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
   ];
 
   constructor(private http: HttpClient) { }
