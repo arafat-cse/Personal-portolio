@@ -10,7 +10,12 @@ namespace Portfolio.API.Controllers
         private static List<Skill> _skills = new List<Skill>
         {
             new Skill { Id = 1, Name = "Angular", Category = "Frontend", Proficiency = 90 },
-            new Skill { Id = 2, Name = "C#", Category = "Backend", Proficiency = 85 }
+            new Skill { Id = 2, Name = "React.js", Category = "Frontend", Proficiency = 85 },
+            new Skill { Id = 3, Name = "ASP.NET", Category = "Backend", Proficiency = 85 },
+            new Skill { Id = 4, Name = "C#", Category = "Backend", Proficiency = 90 },
+            new Skill { Id = 5, Name = "Node.js", Category = "Backend", Proficiency = 80 },
+            new Skill { Id = 6, Name = "Laravel", Category = "Backend", Proficiency = 75 },
+            new Skill { Id = 7, Name = "VPS Server", Category = "Tools", Proficiency = 70 }
         };
 
         [HttpGet]
