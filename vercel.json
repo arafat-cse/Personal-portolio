@@ -1,22 +1,17 @@
 {
-  "version": 2,
-  "builds": [
+  "github": {
+    "silent": true
+  },
+  "buildCommand": "cd frontend && npm install && npm run vercel-build",
+  "outputDirectory": "frontend/dist/browser/browser",
+  "rewrites": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/frontend/browser"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
+
+
+
 
