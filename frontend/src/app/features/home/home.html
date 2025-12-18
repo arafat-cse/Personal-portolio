@@ -1,54 +1,195 @@
-<section class="bg-white dark:bg-gray-800 py-20">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-                Hi, I'm <span class="text-indigo-600 dark:text-indigo-400">Developer Name</span>
-            </h1>
-            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Full Stack Developer specializing in Angular & ASP.NET Core.
-                Building scalable and beautiful web applications.
-            </p>
-            <div class="flex space-x-4">
-                <a routerLink="/projects"
-                    class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg">
-                    View Work
-                </a>
-                <a routerLink="/contact"
-                    class="px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition">
-                    Contact Me
-                </a>
+<section class="relative bg-white dark:bg-gray-900 overflow-hidden">
+    <!-- Background Shapes -->
+    <div
+        class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-indigo-100 dark:bg-indigo-900 blur-3xl opacity-50 animate-blob">
+    </div>
+    <div
+        class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-100 dark:bg-purple-900 blur-3xl opacity-50 animate-blob animation-delay-2000">
+    </div>
+
+    <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <!-- Text Content -->
+            <div class="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-300 text-sm font-semibold mb-4 animate-fade-in-up delay-100">
+                    Available for Freelance
+                </span>
+                <h1
+                    class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight animate-fade-in-up delay-200">
+                    Hi, I'm <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Developer
+                        Name</span>
+                </h1>
+                <p
+                    class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed animate-fade-in-up delay-300">
+                    Full Stack Developer specializing in <span
+                        class="font-semibold text-indigo-600 dark:text-indigo-400">Angular</span> & <span
+                        class="font-semibold text-purple-600 dark:text-purple-400">ASP.NET Core</span>.
+                    I build scalable, beautiful, and high-performance web applications.
+                </p>
+
+                <div
+                    class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mb-10 animate-fade-in-up delay-400">
+                    <a routerLink="/projects"
+                        class="px-8 py-4 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-center">
+                        View Work
+                    </a>
+                    <a routerLink="/contact"
+                        class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 rounded-full font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition transform hover:-translate-y-1 shadow-md hover:shadow-lg text-center">
+                        Contact Me
+                    </a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-6 justify-center md:justify-start animate-fade-in-up delay-400">
+                    <a href="https://github.com" target="_blank"
+                        class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition duration-300 transform hover:scale-110">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank"
+                        class="text-gray-500 hover:text-blue-700 dark:text-gray-400 dark:hover:text-blue-500 transition duration-300 transform hover:scale-110">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="md:w-1/2 flex justify-center relative mt-10 animate-float">
+                <div
+                    class="w-72 h-72 md:w-96 md:h-96 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-full flex items-center justify-center overflow-hidden shadow-2xl relative z-10 border-4 border-white dark:border-gray-800 ring-4 ring-indigo-500 ring-offset-4 ring-offset-white dark:ring-offset-gray-900">
+                    <img src="assets/homes.png" alt="Hero Image" class="w-full h-full object-cover">
+                </div>
+                <!-- Decorative dots -->
+                <div
+                    class="absolute -bottom-10 -right-10 w-24 h-24 bg-yellow-400 rounded-full opacity-20 blur-xl animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -top-10 -left-10 w-32 h-32 bg-pink-400 rounded-full opacity-20 blur-xl animate-blob">
+                </div>
             </div>
         </div>
-        <div class="md:w-1/2 flex justify-center">
-            <!-- Placeholder for Hero Image -->
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-12 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div
-                class="w-64 h-64 md:w-96 md:h-96 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center overflow-hidden shadow-2xl">
-                <span class="text-gray-400 text-6xl">IMG</span>
+                class="bg-purple-50 dark:bg-gray-800 p-8 rounded-2xl text-center transform hover:scale-105 transition duration-300">
+                <h3 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">15 Y.</h3>
+                <p class="text-gray-600 dark:text-gray-400 font-medium">Experience</p>
+            </div>
+            <div
+                class="bg-purple-50 dark:bg-gray-800 p-8 rounded-2xl text-center transform hover:scale-105 transition duration-300">
+                <h3 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">250+</h3>
+                <p class="text-gray-600 dark:text-gray-400 font-medium">Projects Completed</p>
+            </div>
+            <div
+                class="bg-purple-50 dark:bg-gray-800 p-8 rounded-2xl text-center transform hover:scale-105 transition duration-300">
+                <h3 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">58</h3>
+                <p class="text-gray-600 dark:text-gray-400 font-medium">Happy Clients</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Featured Skills Preview -->
-<section class="py-16">
+<section class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Tech Stack</h2>
-        <div class="flex flex-wrap justify-center gap-8">
+        <div class="flex flex-wrap justify-center gap-6">
+            <!-- Angular -->
             <div
-                class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md w-32 h-32 flex flex-col items-center justify-center hover:scale-105 transition transform">
-                <span class="font-bold text-red-600">Angular</span>
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-red-600 mb-2 group-hover:animate-pulse" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.5L2 6l1.5 12L12 22l8.5-4L22 6l-10-3.5z M12 4.5l7 2.5-1.5 9.5L12 19.5 6.5 16.5 5 7l7-2.5z" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">Angular</span>
             </div>
+
+            <!-- React -->
             <div
-                class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md w-32 h-32 flex flex-col items-center justify-center hover:scale-105 transition transform">
-                <span class="font-bold text-blue-600">.NET</span>
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-blue-500 mb-2 group-hover:animate-spin-slow" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)" stroke-width="1.5" />
+                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" stroke-width="1.5" />
+                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" stroke-width="1.5" />
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">React</span>
             </div>
+
+            <!-- Node.js -->
             <div
-                class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md w-32 h-32 flex flex-col items-center justify-center hover:scale-105 transition transform">
-                <span class="font-bold text-cyan-500">Tailwind</span>
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-green-600 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l9 5v10l-9 5-9-5V7l9-5zm0 2.3L4.8 8v8L12 19.7 19.2 16V8L12 4.3z" />
+                    <circle cx="12" cy="12" r="2.5" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">Node.js</span>
             </div>
+
+            <!-- Laravel -->
             <div
-                class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md w-32 h-32 flex flex-col items-center justify-center hover:scale-105 transition transform">
-                <span class="font-bold text-yellow-500">SQL</span>
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-red-500 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M5 3l2 12 5 4 5-4 2-12H5zm7 13.5l-3.5-2.8 1-6.7h5l1 6.7-3.5 2.8z" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">Laravel</span>
+            </div>
+
+            <!-- .NET -->
+            <div
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-purple-600 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v8H8V8z" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">.NET</span>
+            </div>
+
+            <!-- Tailwind -->
+            <div
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-cyan-500 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6m0-2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z" />
+                    <path d="M16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4z" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">Tailwind</span>
+            </div>
+
+            <!-- SQL -->
+            <div
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-yellow-500 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 3c-4.42 0-8 1.79-8 4v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm0 2c3.31 0 6 1.34 6 3s-2.69 3-6 3-6-1.34-6-3 2.69-3 6-3zm0 14c-3.31 0-6-1.34-6-3v-1.5c1.38 1.5 3.58 2.5 6 2.5s4.62-1 6-2.5V16c0 1.66-2.69 3-6 3zm0-5c-3.31 0-6-1.34-6-3v-1.5c1.38 1.5 3.58 2.5 6 2.5s4.62-1 6-2.5V11c0 1.66-2.69 3-6 3z" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">SQL</span>
+            </div>
+
+            <!-- VPS Server -->
+            <div
+                class="p-4 bg-white dark:bg-gray-700 rounded-2xl shadow-lg w-28 h-28 flex flex-col items-center justify-center hover:scale-110 transition transform border border-gray-100 dark:border-gray-600 group cursor-pointer">
+                <svg class="w-10 h-10 text-gray-600 dark:text-gray-400 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 4h16v4H4V4zm0 6h16v4H4v-4zm0 6h16v4H4v-4z" />
+                </svg>
+                <span class="font-bold text-gray-700 dark:text-gray-200 text-sm">VPS</span>
             </div>
         </div>
     </div>

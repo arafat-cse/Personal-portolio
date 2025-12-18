@@ -23,7 +23,7 @@ export class ProfileService {
     bio: `I am a passionate Full Stack Developer with experience in building robust web applications using Angular and ASP.NET Core. 
           I love solving complex problems and creating efficient, scalable, and user-friendly solutions. 
           With a strong foundation in both frontend and backend technologies, I can handle the entire development lifecycle.`,
-    email: 'dev@example.com',
+    email: 'arafat.dev61@gmail.com',
     location: 'Dhaka, Bangladesh',
     avatarUrl: 'assets/avatar-placeholder.png', // Ensure this exists or use a placeholder URL
     socialLinks: [

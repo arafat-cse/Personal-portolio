@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -14,23 +15,28 @@ export interface Skill {
 })
 export class SkillsService {
 
-  private mockSkills: Skill[] = [
-    { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90 },
-    { id: 2, name: 'TypeScript', category: 'Frontend', proficiency: 85 },
-    { id: 3, name: 'HTML/CSS', category: 'Frontend', proficiency: 95 },
-    { id: 4, name: 'Tailwind CSS', category: 'Frontend', proficiency: 90 },
-    { id: 5, name: 'C#', category: 'Backend', proficiency: 85 },
-    { id: 6, name: 'ASP.NET Core', category: 'Backend', proficiency: 80 },
-    { id: 7, name: 'SQL Server', category: 'Backend', proficiency: 75 },
-    { id: 8, name: 'Entity Framework', category: 'Backend', proficiency: 80 },
-    { id: 9, name: 'Git', category: 'Tools', proficiency: 90 },
-    { id: 10, name: 'Docker', category: 'Tools', proficiency: 60 },
-    { id: 11, name: 'Azure', category: 'Tools', proficiency: 50 },
+  private apiUrl = 'http://localhost:5000/api/skills';
+
+  private skills: Skill[] = [
+    { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
+    { id: 2, name: 'React.js', category: 'Frontend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { id: 3, name: 'ASP.NET', category: 'Backend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
+    { id: 4, name: 'C#', category: 'Backend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+    { id: 5, name: 'Node.js', category: 'Backend', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { id: 6, name: 'Laravel', category: 'Backend', proficiency: 75, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+    { id: 7, name: 'VPS Server', category: 'Tools', proficiency: 70, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getSkills(): Observable<Skill[]> {
-    return of(this.mockSkills);
+    // return this.http.get<Skill[]>(this.apiUrl);
+    return of(this.skills);
+  }
+
+  addSkill(skill: Skill): Observable<Skill> {
+    // return this.http.post<Skill>(this.apiUrl, skill);
+    this.skills.push(skill);
+    return of(skill);
   }
 }

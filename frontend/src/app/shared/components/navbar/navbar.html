@@ -29,6 +29,10 @@
                     class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
                     Experience
                 </a>
+                <a routerLink="/problem-solving" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
+                    class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    Problem Solving
+                </a>
                 <a routerLink="/certificates" routerLinkActive="text-indigo-600 dark:text-indigo-400 font-semibold"
                     class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
                     Certificates
@@ -86,6 +90,11 @@
                 class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
                 Experience
             </a>
+            <a routerLink="/problem-solving" (click)="closeMobileMenu()"
+                routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
+                class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+                Problem Solving
+            </a>
             <a routerLink="/certificates" (click)="closeMobileMenu()"
                 routerLinkActive="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-gray-700"
                 class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition">
@@ -99,6 +108,4 @@
         </div>
     </div>
     }
-    </div>
-    </div>
 </nav>

@@ -20,31 +20,73 @@ export class ExperienceService {
   private mockExperience: Experience[] = [
     {
       id: 1,
-      role: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      location: 'New York, NY',
-      startDate: 'Jan 2022',
+      role: 'Junior Developer',
+      company: 'Hybritech Innovations Ltd.',
+      location: 'Dhaka, Bangladesh',
+      startDate: 'July 2025',
       endDate: 'Present',
       description: [
-        'Lead a team of 5 developers in building scalable web applications.',
-        'Architected and implemented a microservices-based backend using ASP.NET Core.',
-        'Optimized frontend performance, reducing load times by 40%.'
+        'Working with Angular, React, Laravel, and OData to develop web applications.',
+        'Collaborating with cross-functional teams to deliver high-quality software solutions.',
+        'Participating in code reviews and contributing to architectural decisions.'
       ],
-      technologies: ['Angular', '.NET Core', 'Azure', 'Docker']
+      technologies: ['Angular', 'React', 'Laravel', 'OData']
     },
     {
       id: 2,
       role: 'Software Engineer',
-      company: 'Digital Innovations',
-      location: 'San Francisco, CA',
-      startDate: 'Jun 2019',
+      company: 'US Software Limited',
+      location: 'Dhaka, Bangladesh',
+      startDate: 'July 2024',
+      endDate: 'Dec 2024',
+      description: [
+        'Worked on ASP.NET, C#, and Angular to develop robust web applications.',
+        'Implemented scalable backend services and optimized database queries.',
+        'Ensured application performance and security best practices.'
+      ],
+      technologies: ['ASP.NET', 'C#', 'Angular', 'SQL Server']
+    },
+    {
+      id: 3,
+      role: 'Software Testing Specialist',
+      company: 'Bio-Xin Cosmeceuticals',
+      location: 'Dhaka, Bangladesh',
+      startDate: 'Jan 2023',
+      endDate: 'June 2024',
+      description: [
+        'Experienced in API testing, ensuring seamless communication between services.',
+        'Skilled in using tools like Postman and Swagger for functional, performance, and security testing.',
+        'Responsible for identifying and reporting bugs, verifying fixes, and improving software reliability.'
+      ],
+      technologies: ['Postman', 'Swagger', 'API Testing', 'QA']
+    },
+    {
+      id: 4,
+      role: 'Frontend Designer',
+      company: 'Brandlly',
+      location: 'Dhaka, Bangladesh',
+      startDate: 'June 2022',
+      endDate: 'Dec 2022',
+      description: [
+        'Developed and maintained applications using HTML5, CSS3, JavaScript, Bootstrap5, and TailwindCSS.',
+        'Translated UI/UX design wireframes into high-quality code.',
+        'Optimized applications for maximum speed and scalability.'
+      ],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap5', 'TailwindCSS']
+    },
+    {
+      id: 5,
+      role: 'Full Stack Web Developer (Intern)',
+      company: 'Unicorns Codes Ltd.',
+      location: 'Dhaka, Bangladesh',
+      startDate: 'June 2021',
       endDate: 'Dec 2021',
       description: [
-        'Developed and maintained multiple client-facing web applications.',
-        'Collaborated with UX/UI designers to implement responsive designs.',
-        'Integrated third-party APIs for payment processing and data analytics.'
+        'Developed and maintained applications using HTML5, CSS, JavaScript, and Bootstrap5.',
+        'Assisted in the development of backend modules and database schemas.',
+        'Gained hands-on experience in full-stack web development workflows.'
       ],
-      technologies: ['React', 'Node.js', 'MongoDB', 'AWS']
+      technologies: ['HTML5', 'CSS', 'JavaScript', 'Bootstrap5']
     }
   ];
 
