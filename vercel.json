@@ -1,9 +1,7 @@
 {
-  "github": {
-    "silent": true
-  },
-  "buildCommand": "cd frontend && npm install && npm run vercel-build",
+  "buildCommand": "bash build.sh",
   "outputDirectory": "frontend/dist/browser/browser",
+  "installCommand": "echo 'Dependencies will be installed in build script'",
   "rewrites": [
     {
       "source": "/(.*)",
@@ -11,7 +9,4 @@
     }
   ]
 }
-
-
-
 
