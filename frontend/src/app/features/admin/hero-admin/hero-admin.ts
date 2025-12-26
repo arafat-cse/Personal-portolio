@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class HeroAdminComponent implements OnInit {
   heroData = {
     greeting: "Hi, I'm",
-    name: "Developer Name",
+    name: "Md Arafat Rahman",
     title: "Full Stack Developer",
     description: "I build amazing web applications."
   };

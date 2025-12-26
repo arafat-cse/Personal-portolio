@@ -18,7 +18,7 @@ export class ProfileService {
 
   // Mock data for now, replace with HttpClient call later
   private mockProfile: Profile = {
-    name: 'Developer Name',
+    name: 'Md Arafat Rahman',
     title: 'Full Stack Developer',
     bio: `I am a passionate Full Stack Developer with experience in building robust web applications using Angular and ASP.NET Core. 
           I love solving complex problems and creating efficient, scalable, and user-friendly solutions. 
