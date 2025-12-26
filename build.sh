@@ -6,3 +6,4 @@ cd frontend
 npm install
 npm run vercel-build
 echo "Build completed successfully!"
+
