@@ -1,17 +1,17 @@
 <section class="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden" id="contact">
     <!-- Background Elements -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-indigo-500 opacity-10 blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-purple-500 opacity-10 blur-3xl"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-teal-500 opacity-10 blur-3xl"></div>
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-white mb-4 tracking-tight">
                 Get In <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Touch</span>
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Touch</span>
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p class="text-lg text-secondary dark:text-gray-300 max-w-2xl mx-auto">
                 Have a project in mind or just want to say hi? I'd love to hear from you.
             </p>
         </div>
@@ -20,14 +20,14 @@
             class="max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
             <!-- Contact Info Side -->
             <div
-                class="md:w-2/5 bg-gradient-to-br from-indigo-600 to-purple-700 p-10 text-white flex flex-col justify-between relative overflow-hidden">
+                class="md:w-2/5 bg-gradient-to-br from-emerald-600 to-teal-700 p-10 text-white flex flex-col justify-between relative overflow-hidden">
                 <!-- Decorative Circles -->
                 <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 rounded-full bg-white opacity-10"></div>
                 <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 rounded-full bg-white opacity-10"></div>
 
                 <div>
                     <h3 class="text-3xl font-bold mb-6">Contact Information</h3>
-                    <p class="mb-8 text-indigo-100 leading-relaxed">
+                    <p class="mb-8 text-emerald-100 leading-relaxed">
                         Fill up the form and I will get back to you within 24 hours.
                     </p>
 
@@ -42,7 +42,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-indigo-100 text-sm font-medium uppercase tracking-wider">Email</p>
+                                <p class="text-emerald-100 text-sm font-medium uppercase tracking-wider">Email</p>
                                 <p class="font-medium text-white">arafat.dev61@gmail.com</p>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <p class="text-indigo-100 text-sm font-medium uppercase tracking-wider">Location</p>
+                                <p class="text-emerald-100 text-sm font-medium uppercase tracking-wider">Location</p>
                                 <p class="font-medium text-white">Dhaka, Bangladesh</p>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="mt-12">
-                    <p class="text-indigo-100 text-sm font-medium uppercase tracking-wider mb-4">Follow Me</p>
+                    <p class="text-emerald-100 text-sm font-medium uppercase tracking-wider mb-4">Follow Me</p>
                     <div class="flex space-x-4">
                         <a href="https://github.com/arafat-cse" target="_blank"
                             class="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition duration-300 transform hover:scale-110 text-white">
@@ -92,10 +92,10 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="relative">
                             <label for="name"
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your
+                                class="block text-sm font-medium text-secondary dark:text-gray-300 mb-1">Your
                                 Name</label>
                             <input type="text" id="name" formControlName="name"
-                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none transition duration-200 text-gray-900 dark:text-white"
+                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition duration-200 text-primary dark:text-white"
                                 placeholder="John Doe">
                             @if (contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty ||
                             contactForm.get('name')?.touched)) {
@@ -104,10 +104,10 @@
                         </div>
                         <div class="relative">
                             <label for="email"
-                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your
+                                class="block text-sm font-medium text-secondary dark:text-gray-300 mb-1">Your
                                 Email</label>
                             <input type="email" id="email" formControlName="email"
-                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none transition duration-200 text-gray-900 dark:text-white"
+                                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition duration-200 text-primary dark:text-white"
                                 placeholder="john@example.com">
                             @if (contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty ||
                             contactForm.get('email')?.touched)) {
@@ -118,9 +118,9 @@
 
                     <div class="relative">
                         <label for="subject"
-                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+                            class="block text-sm font-medium text-secondary dark:text-gray-300 mb-1">Subject</label>
                         <input type="text" id="subject" formControlName="subject"
-                            class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none transition duration-200 text-gray-900 dark:text-white"
+                            class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition duration-200 text-primary dark:text-white"
                             placeholder="Project Inquiry">
                         @if (contactForm.get('subject')?.invalid && (contactForm.get('subject')?.dirty ||
                         contactForm.get('subject')?.touched)) {
@@ -130,9 +130,9 @@
 
                     <div class="relative">
                         <label for="message"
-                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            class="block text-sm font-medium text-secondary dark:text-gray-300 mb-1">Message</label>
                         <textarea id="message" formControlName="message" rows="5"
-                            class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:focus:ring-indigo-900 outline-none transition duration-200 text-gray-900 dark:text-white resize-none"
+                            class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition duration-200 text-primary dark:text-white resize-none"
                             placeholder="Tell me about your project..."></textarea>
                         @if (contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty ||
                         contactForm.get('message')?.touched)) {
@@ -141,7 +141,7 @@
                     </div>
 
                     <button type="submit" [disabled]="contactForm.invalid || isSubmitting"
-                        class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-purple-700 transform hover:-translate-y-1 transition duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                        class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold py-4 px-6 rounded-lg hover:from-emerald-700 hover:to-teal-700 transform hover:-translate-y-1 transition duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
                         @if (isSubmitting) {
                         <span class="flex items-center justify-center">
                             <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"

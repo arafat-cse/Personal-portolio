@@ -3,11 +3,11 @@
         <!-- Header -->
         <div class="text-center mb-16">
             <h2
-                class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 mb-4 inline-block">
+                class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 mb-4 inline-block">
                 Problem Solving
             </h2>
-            <div class="w-24 h-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded-full"></div>
-            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
+            <p class="mt-4 text-lg text-secondary dark:text-gray-300 max-w-2xl mx-auto">
                 My journey through algorithms, data structures, and competitive programming.
             </p>
         </div>
@@ -45,7 +45,7 @@
                         }
                     </div>
 
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white relative z-10">{{ profile.name }}</h3>
+                    <h3 class="text-2xl font-bold text-primary dark:text-white relative z-10">{{ profile.name }}</h3>
                     <a [href]="profile.url" target="_blank"
                         class="text-sm {{profile.color}} font-medium hover:underline mt-1 relative z-10">{{
                         profile.username }}</a>
@@ -56,15 +56,15 @@
                     <div class="grid grid-cols-3 gap-4 mb-6">
                         @for (stat of profile.stats; track stat.label) {
                         <div class="text-center">
-                            <p class="text-lg font-bold text-gray-800 dark:text-white">{{ stat.value }}</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">{{ stat.label }}
+                            <p class="text-lg font-bold text-primary dark:text-white">{{ stat.value }}</p>
+                            <p class="text-xs text-secondary dark:text-gray-400 uppercase tracking-wide">{{ stat.label }}
                             </p>
                         </div>
                         }
                     </div>
 
                     <a [href]="profile.url" target="_blank"
-                        class="block w-full py-3 text-center rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-600 transition-colors duration-300">
+                        class="block w-full py-3 text-center rounded-xl bg-gray-50 dark:bg-gray-700 text-secondary dark:text-gray-200 font-semibold hover:bg-brand hover:text-white dark:hover:bg-brand transition-colors duration-300">
                         View Profile
                     </a>
                 </div>
