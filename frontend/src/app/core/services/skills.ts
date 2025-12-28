@@ -15,7 +15,7 @@ export interface Skill {
 })
 export class SkillsService {
 
-  private apiUrl = 'http://localhost:5000/api/skills';
+  private apiUrl = 'https://localhost:7085/api/skills';
 
   private skills: Skill[] = [
     { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },

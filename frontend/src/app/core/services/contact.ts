@@ -14,7 +14,7 @@ export interface ContactMessage {
 })
 export class ContactService {
 
-  private apiUrl = 'http://localhost:5000/api/contact';
+  private apiUrl = 'https://localhost:7085/api/contact';
 
   constructor(private http: HttpClient) { }
 

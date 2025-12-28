@@ -18,7 +18,7 @@ export interface Project {
 })
 export class ProjectsService {
 
-  private apiUrl = 'http://localhost:5000/api/projects';
+  private apiUrl = 'https://localhost:7085/api/projects';
 
   private projects: Project[] = [
     {

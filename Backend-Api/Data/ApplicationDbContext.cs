@@ -9,5 +9,7 @@ namespace Backend_Api.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+        public DbSet<HeroSection> HeroSections { get; set; }
     }
 }
