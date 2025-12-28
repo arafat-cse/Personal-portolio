@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HeroService, HeroSection, UpdateHeroSection } from '../../../core/services/hero.service';
+import { HeroService } from '../../../core/services/hero.service';
+import { HeroSection, UpdateHeroSection } from '../../../core/interfaces/hero.interface';
 
 @Component({
   selector: 'app-hero-admin',
@@ -21,11 +22,24 @@ export class HeroAdminComponent implements OnInit {
   loading = false;
   error = '';
   success = '';
+  selectedFile: File | null = null;
+  currentImageUrl: string | null = null;
 
   constructor(private heroService: HeroService) {}
 
   ngOnInit() {
     this.loadHeroData();
+  }
+
+  /**
+   * Handle file selection
+   */
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+      this.heroData.image = file;
+    }
   }
 
   /**
@@ -41,6 +55,7 @@ export class HeroAdminComponent implements OnInit {
           // Get the first hero section
           const hero = heroes[0];
           this.heroId = hero.id;
+          this.currentImageUrl = hero.imageUrl || null;
           this.heroData = {
             greeting: hero.greeting,
             name: hero.name,
@@ -78,6 +93,10 @@ export class HeroAdminComponent implements OnInit {
           console.log('Hero updated successfully', response);
           this.loading = false;
           this.success = 'Hero section updated successfully!';
+          if (response.imageUrl) {
+            this.currentImageUrl = response.imageUrl;
+          }
+          this.selectedFile = null; // Reset selected file
           setTimeout(() => this.success = '', 3000);
         },
         error: (err) => {
@@ -92,8 +111,13 @@ export class HeroAdminComponent implements OnInit {
         next: (response) => {
           console.log('Hero created successfully', response);
           this.heroId = response.id;
+          this.heroId = response.id;
           this.loading = false;
           this.success = 'Hero section created successfully!';
+          if (response.imageUrl) {
+            this.currentImageUrl = response.imageUrl;
+          }
+          this.selectedFile = null; // Reset selected file
           setTimeout(() => this.success = '', 3000);
         },
         error: (err) => {

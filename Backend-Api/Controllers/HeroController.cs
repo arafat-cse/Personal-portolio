@@ -39,7 +39,7 @@ namespace Backend_Api.Controllers
         // POST: api/Hero
         [HttpPost]
         [Authorize] // Requires authentication
-        public async Task<ActionResult<HeroSectionDto>> Create([FromBody] CreateHeroSectionDto dto)
+        public async Task<ActionResult<HeroSectionDto>> Create([FromForm] CreateHeroSectionDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -53,7 +53,7 @@ namespace Backend_Api.Controllers
         // PUT: api/Hero/5
         [HttpPut("{id}")]
         [Authorize] // Requires authentication
-        public async Task<ActionResult<HeroSectionDto>> Update(int id, [FromBody] UpdateHeroSectionDto dto)
+        public async Task<ActionResult<HeroSectionDto>> Update(int id, [FromForm] UpdateHeroSectionDto dto)
         {
             if (!ModelState.IsValid)
             {
@@ -72,7 +72,7 @@ namespace Backend_Api.Controllers
         // PATCH: api/Hero/5
         [HttpPatch("{id}")]
         [Authorize] // Requires authentication
-        public async Task<ActionResult<HeroSectionDto>> Patch(int id, [FromBody] UpdateHeroSectionDto dto)
+        public async Task<ActionResult<HeroSectionDto>> Patch(int id, [FromForm] UpdateHeroSectionDto dto)
         {
             // For simplicity, PATCH uses the same logic as PUT
             // In a more complex scenario, you might want to handle partial updates differently

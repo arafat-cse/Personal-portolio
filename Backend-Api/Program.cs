@@ -116,6 +116,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseCors("AllowAngularApp"); // Enable CORS
 
 app.UseAuthentication(); // Must be before Authorization

@@ -13,12 +13,21 @@ export class ApiService {
   /**
    * Get authorization headers with JWT token
    */
-  private getHeaders(): HttpHeaders {
+  /**
+   * Get authorization headers with JWT token
+   * @param isFormData - If true, do not set Content-Type header (browser handles it)
+   */
+  private getHeaders(isFormData: boolean = false): HttpHeaders {
     const token = localStorage.getItem('token');
-    return new HttpHeaders({
-      'Content-Type': 'application/json',
+    let headersConfig: any = {
       'Authorization': token ? `Bearer ${token}` : ''
-    });
+    };
+
+    if (!isFormData) {
+      headersConfig['Content-Type'] = 'application/json';
+    }
+
+    return new HttpHeaders(headersConfig);
   }
 
   /**
@@ -48,8 +57,9 @@ export class ApiService {
    * @param data - Request body
    */
   post<T>(endpoint: string, data: any): Observable<T> {
+    const isFormData = data instanceof FormData;
     return this.http.post<T>(`${this.baseUrl}/${endpoint}`, data, {
-      headers: this.getHeaders()
+      headers: this.getHeaders(isFormData)
     });
   }
 
@@ -60,8 +70,9 @@ export class ApiService {
    * @param data - Request body
    */
   put<T>(endpoint: string, id: number | string, data: any): Observable<T> {
+    const isFormData = data instanceof FormData;
     return this.http.put<T>(`${this.baseUrl}/${endpoint}/${id}`, data, {
-      headers: this.getHeaders()
+      headers: this.getHeaders(isFormData)
     });
   }
 
@@ -72,8 +83,9 @@ export class ApiService {
    * @param data - Request body
    */
   patch<T>(endpoint: string, id: number | string, data: any): Observable<T> {
+    const isFormData = data instanceof FormData;
     return this.http.patch<T>(`${this.baseUrl}/${endpoint}/${id}`, data, {
-      headers: this.getHeaders()
+      headers: this.getHeaders(isFormData)
     });
   }
 

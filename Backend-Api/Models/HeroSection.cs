@@ -23,7 +23,10 @@ namespace Backend_Api.Models
         [MaxLength(1000)]
         public string Description { get; set; } = string.Empty;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+        [MaxLength(500)]
+        public string? ImageUrl { get; set; }
+
+        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }
