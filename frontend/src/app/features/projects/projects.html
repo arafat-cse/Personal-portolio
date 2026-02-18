@@ -24,10 +24,10 @@
                     <img [src]="project.imageUrl" [alt]="project.title"
                         class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div
-                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center space-x-4">
+                        class="absolute inset-0 bg-black/60 dark:bg-black/75 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center space-x-4">
                         @if (project.demoUrl) {
-                        <a [href]="project.demoUrl" target="_blank"
-                            class="p-2 bg-white rounded-full text-primary hover:text-brand transition"
+                        <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer"
+                            class="p-2.5 rounded-full bg-white/95 text-slate-900 ring-1 ring-black/10 shadow-md hover:text-emerald-600 hover:bg-white transition dark:bg-slate-900/85 dark:text-slate-100 dark:ring-white/20 dark:hover:bg-slate-800"
                             title="Live Demo">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,8 +39,8 @@
                         </a>
                         }
                         @if (project.githubUrl) {
-                        <a [href]="project.githubUrl" target="_blank"
-                            class="p-2 bg-white rounded-full text-primary hover:text-brand transition"
+                        <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer"
+                            class="p-2.5 rounded-full bg-white/95 text-slate-900 ring-1 ring-black/10 shadow-md hover:text-emerald-600 hover:bg-white transition dark:bg-slate-900/85 dark:text-slate-100 dark:ring-white/20 dark:hover:bg-slate-800"
                             title="View Code">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd"
