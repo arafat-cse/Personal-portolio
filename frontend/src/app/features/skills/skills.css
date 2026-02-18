@@ -43,6 +43,7 @@
 
 .skill-bar {
   position: relative;
+  transition: width 4s cubic-bezier(0.1, 0, 0.3, 1);
 }
 
 .skill-bar::after {

@@ -11,10 +11,13 @@
             </span>
             <h2 class="text-3xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-4xl md:text-6xl">
                 Crafting Products With
-                <span class="bg-gradient-to-r from-emerald-600 via-cyan-500 to-teal-500 dark:from-emerald-300 dark:via-cyan-300 dark:to-teal-300 bg-clip-text text-transparent">Focused Depth</span>
+                <span
+                    class="bg-gradient-to-r from-emerald-600 via-cyan-500 to-teal-500 dark:from-emerald-300 dark:via-cyan-300 dark:to-teal-300 bg-clip-text text-transparent">Focused
+                    Depth</span>
             </h2>
             <p class="mx-auto mt-5 max-w-2xl text-base text-slate-600 dark:text-slate-300 md:text-lg">
-                Not just a tech list. This view shows where execution is strongest, how balanced the stack is, and where I ship fastest.
+                Not just a tech list. This view shows where execution is strongest, how balanced the stack is, and where
+                I ship fastest.
             </p>
         </div>
 
@@ -25,7 +28,7 @@
             </div>
             <div class="stat-card">
                 <p class="stat-label">Overall Average</p>
-                <p class="stat-value">{{ getOverallAverage() }}%</p>
+                <p class="stat-value">{{ getDisplayValue(getOverallAverage()) }}%</p>
             </div>
             <div class="stat-card">
                 <p class="stat-label">Strongest Domain</p>
@@ -38,27 +41,32 @@
                 <div class="panel-card">
                     <div class="mb-5 flex items-center justify-between">
                         <h3 class="text-xl font-bold text-slate-900 dark:text-white">Top Capabilities</h3>
-                        <span class="rounded-full bg-slate-900/5 dark:bg-white/10 px-3 py-1 text-xs font-semibold text-slate-600 dark:text-slate-200">Ranked</span>
+                        <span
+                            class="rounded-full bg-slate-900/5 dark:bg-white/10 px-3 py-1 text-xs font-semibold text-slate-600 dark:text-slate-200">Ranked</span>
                     </div>
 
                     <div class="space-y-4">
                         @for (skill of getTopSkills(5); track skill.id; let i = $index) {
-                        <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/5 p-4">
+                        <div
+                            class="rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/5 p-4">
                             <div class="mb-2 flex items-center justify-between gap-2">
                                 <div class="flex min-w-0 items-center gap-3">
                                     <span
-                                        class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-emerald-500/15 dark:bg-emerald-400/20 text-xs font-bold text-emerald-700 dark:text-emerald-300">#{{ i + 1 }}</span>
+                                        class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-emerald-500/15 dark:bg-emerald-400/20 text-xs font-bold text-emerald-700 dark:text-emerald-300">#{{
+                                        i + 1 }}</span>
                                     @if (skill.icon) {
                                     <img [src]="skill.icon" [alt]="skill.name" class="h-6 w-6" />
                                     }
-                                    <p class="truncate font-semibold text-slate-800 dark:text-slate-100">{{ skill.name }}</p>
+                                    <p class="truncate font-semibold text-slate-800 dark:text-slate-100">{{ skill.name
+                                        }}</p>
                                 </div>
-                                <p class="shrink-0 text-sm font-bold text-emerald-700 dark:text-emerald-300">{{ skill.proficiency }}%</p>
+                                <p class="shrink-0 text-sm font-bold text-emerald-700 dark:text-emerald-300">{{
+                                    getDisplayValue(skill.proficiency) }}%</p>
                             </div>
                             <div class="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
-                                <div
-                                    class="skill-bar h-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-400"
-                                    [style.width.%]="skill.proficiency"></div>
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-400"
+                                    [style.width.%]="isViewed() ? skill.proficiency : 0"
+                                    [style.transition-delay.ms]="i * 200"></div>
                             </div>
                         </div>
                         }
@@ -72,30 +80,36 @@
                 <div class="panel-card">
                     <div class="mb-5 flex items-center justify-between">
                         <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ category }}</h3>
-                        <span class="rounded-full bg-emerald-500/15 dark:bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
-                            Avg {{ getAverageByCategory(category) }}%
+                        <span
+                            class="rounded-full bg-emerald-500/15 dark:bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+                            Avg {{ getDisplayValue(getAverageByCategory(category)) }}%
                         </span>
                     </div>
 
                     <div class="space-y-4">
                         @for (skill of getSkillsByCategory(category); track skill.id) {
-                        <div class="rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-slate-900/40 p-4">
+                        <div
+                            class="rounded-xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-slate-900/40 p-4">
                             <div class="mb-2 flex items-center justify-between gap-2">
                                 <div class="flex items-center gap-3 min-w-0">
                                     @if (skill.icon) {
                                     <img [src]="skill.icon" [alt]="skill.name" class="h-6 w-6 shrink-0" />
                                     }
-                                    <p class="truncate font-semibold text-slate-800 dark:text-slate-100">{{ skill.name }}</p>
+                                    <p class="truncate font-semibold text-slate-800 dark:text-slate-100">{{ skill.name
+                                        }}</p>
                                 </div>
                                 <div class="text-right shrink-0">
-                                    <p class="text-sm font-bold text-cyan-700 dark:text-cyan-300">{{ skill.proficiency }}%</p>
-                                    <p class="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">{{ getSkillTone(skill.proficiency) }}</p>
+                                    <p class="text-sm font-bold text-cyan-700 dark:text-cyan-300">{{
+                                        getDisplayValue(skill.proficiency)
+                                        }}%</p>
+                                    <p class="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400">{{
+                                        getSkillTone(skill.proficiency) }}</p>
                                 </div>
                             </div>
                             <div class="h-2 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
-                                <div
-                                    class="skill-bar h-full rounded-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-400"
-                                    [style.width.%]="skill.proficiency"></div>
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-400"
+                                    [style.width.%]="isViewed() ? skill.proficiency : 0"
+                                    [style.transition-delay.ms]="$index * 150"></div>
                             </div>
                         </div>
                         }

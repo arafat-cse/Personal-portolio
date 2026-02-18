@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ElementRef, AfterViewInit } from '@angular/core';
 import { Skill, SkillsService } from '../../core/services/skills';
 
 @Component({
@@ -7,17 +7,59 @@ import { Skill, SkillsService } from '../../core/services/skills';
   templateUrl: './skills.html',
   styleUrl: './skills.css',
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, AfterViewInit {
   skills = signal<Skill[]>([]);
+  isViewed = signal<boolean>(false);
+  animationProgress = signal<number>(0);
   readonly categories: Skill['category'][] = ['Frontend', 'Backend', 'Tools', 'Other'];
 
-  constructor(private skillsService: SkillsService) {}
+  constructor(
+    private skillsService: SkillsService,
+    private el: ElementRef
+  ) {}
 
   ngOnInit(): void {
     this.skillsService.getSkills().subscribe({
       next: (data) => this.skills.set(data),
       error: (err) => console.error('Failed to load skills', err)
     });
+  }
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.isViewed.set(true);
+        this.animateCounters();
+        observer.disconnect();
+      }
+    }, { threshold: 0.4 }); // Trigger when 40% visible
+
+    observer.observe(this.el.nativeElement);
+  }
+
+  private animateCounters(): void {
+    const duration = 4000; // 4 seconds for a really slow fill
+    const startTime = performance.now();
+
+    const update = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Matching the CSS cubic-bezier(0.1, 0, 0.3, 1) roughly with a custom ease
+      const easeProgress = 1 - Math.pow(1 - progress, 2.5);
+      
+      this.animationProgress.set(easeProgress);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  }
+
+  getDisplayValue(target: number): number {
+    return Math.round(target * this.animationProgress());
   }
 
   getSkillsByCategory(category: string): Skill[] {

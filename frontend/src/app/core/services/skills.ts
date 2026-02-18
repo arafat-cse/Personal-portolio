@@ -19,7 +19,8 @@ export class SkillsService {
 
   private skills: Skill[] = [
     { id: 1, name: 'Angular', category: 'Frontend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
-    { id: 2, name: 'React.js', category: 'Frontend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { id: 10, name: 'Next.js', category: 'Frontend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+    { id: 2, name: 'React.js', category: 'Frontend', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { id: 3, name: 'ASP.NET', category: 'Backend', proficiency: 85, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
     { id: 4, name: 'C#', category: 'Backend', proficiency: 90, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
     { id: 5, name: 'Node.js', category: 'Backend', proficiency: 80, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
