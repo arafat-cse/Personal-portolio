@@ -8,11 +8,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.css',
 })
 export class NavbarComponent {
-  isDarkMode = false;
+  isDarkMode = true;
   isMobileMenuOpen = false;
+
+  constructor() {
+    const storedTheme = localStorage.getItem('theme');
+    this.isDarkMode = storedTheme ? storedTheme === 'dark' : true;
+    this.applyTheme();
+  }
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+    this.applyTheme();
+  }
+
+  private applyTheme() {
     if (this.isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {

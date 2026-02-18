@@ -7,7 +7,7 @@
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex items-center space-x-8">
                 <a routerLink="/" routerLinkActive="text-brand dark:text-emerald-400 font-semibold"
                     [routerLinkActiveOptions]="{exact: true}"
                     class="text-secondary dark:text-gray-300 hover:text-brand dark:hover:text-emerald-400 transition">
@@ -41,6 +41,23 @@
                     class="text-secondary dark:text-gray-300 hover:text-brand dark:hover:text-emerald-400 transition">
                     Contact
                 </a>
+                <button
+                    type="button"
+                    (click)="toggleTheme()"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-300 bg-slate-100 text-slate-700 transition hover:bg-slate-200 dark:border-slate-600 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600"
+                    [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+                    @if (isDarkMode) {
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36-.7-.7M6.34 6.34l-.7-.7m12.72 0-.7.7M6.34 17.66l-.7.7M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    } @else {
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 118.646 3.646 7 7 0 0020.354 15.354z" />
+                    </svg>
+                    }
+                </button>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -64,6 +81,24 @@
     @if (isMobileMenuOpen) {
     <div class="md:hidden bg-white dark:bg-gray-800 shadow-lg absolute top-16 left-0 w-full z-40">
         <div class="flex flex-col px-4 py-2 space-y-2">
+            <button
+                type="button"
+                (click)="toggleTheme()"
+                class="flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-secondary dark:text-gray-200 bg-gray-50 dark:bg-gray-700"
+                [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+                <span>Theme</span>
+                @if (isDarkMode) {
+                <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36-.7-.7M6.34 6.34l-.7-.7m12.72 0-.7.7M6.34 17.66l-.7.7M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+                } @else {
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.354 15.354A9 9 0 118.646 3.646 7 7 0 0020.354 15.354z" />
+                </svg>
+                }
+            </button>
             <a routerLink="/" (click)="closeMobileMenu()"
                 routerLinkActive="text-brand dark:text-emerald-400 bg-emerald-50 dark:bg-gray-700"
                 [routerLinkActiveOptions]="{exact: true}"
