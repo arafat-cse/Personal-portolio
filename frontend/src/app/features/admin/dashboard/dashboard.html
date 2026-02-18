@@ -172,7 +172,7 @@
 
     <!-- Add Skill Modal -->
     @if (showSkillModal) {
-    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
         <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl w-full max-w-md">
             <h3 class="text-xl font-bold mb-4 text-primary dark:text-white">Add New Skill</h3>
             <form (ngSubmit)="addSkill()" class="space-y-4">
@@ -209,7 +209,7 @@
 
     <!-- Add Project Modal -->
     @if (showProjectModal) {
-    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
         <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl w-full max-w-md">
             <h3 class="text-xl font-bold mb-4 text-primary dark:text-white">Add New Project</h3>
             <form (ngSubmit)="addProject()" class="space-y-4">
