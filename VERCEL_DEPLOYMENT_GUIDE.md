@@ -96,6 +96,8 @@ If you prefer to use `vercel.json` instead of project settings, the current conf
    ```bash
    cd /var/www/html/Personal-portolio
    vercel --prod
+   
+   npx vercel --prod
    ```
 
 ---

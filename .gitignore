@@ -169,3 +169,5 @@ Thumbs.db
 *.db-wal
 *.sqlite
 *.sqlite3
+.vercel
+.env*.local

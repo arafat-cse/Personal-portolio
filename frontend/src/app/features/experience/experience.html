@@ -1,107 +1,95 @@
-<section class="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden relative" id="experience">
-    <!-- Background decorations -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div
-            class="absolute -top-24 -left-24 w-96 h-96 bg-brand rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob">
-        </div>
-        <div
-            class="absolute top-0 -right-4 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000">
-        </div>
-        <div
-            class="absolute -bottom-8 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000">
-        </div>
-    </div>
+<section id="experience" class="experience-shell relative overflow-hidden py-16 md:py-24">
+    <div class="absolute inset-0 experience-backdrop"></div>
+    <div class="absolute -top-24 -left-12 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl"></div>
 
-    <div class="container mx-auto px-4 relative z-10">
-        <!-- Section Header -->
-        <div class="text-center mb-16">
-            <h2
-                class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 mb-4 inline-block">
-                Professional Journey
+    <div class="container relative z-10 mx-auto px-4">
+        <div class="mx-auto max-w-4xl text-center">
+            <span class="eyebrow">Experience Map</span>
+            <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl md:text-6xl">
+                Milestones That
+                <span class="bg-gradient-to-r from-emerald-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent dark:from-emerald-300 dark:via-cyan-300 dark:to-teal-300">Built My Engineering Backbone</span>
             </h2>
-            <div class="w-24 h-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
-            <p class="mt-4 text-lg text-secondary dark:text-gray-300 max-w-2xl mx-auto">
-                A timeline of my professional growth and the impactful projects I've contributed to.
+            <p class="mx-auto mt-5 max-w-2xl text-slate-600 dark:text-slate-300">
+                From design-focused frontend work to production-grade full stack delivery and QA depth, each role sharpened a different edge.
             </p>
         </div>
 
-        <!-- Timeline Container -->
-        <div class="relative max-w-4xl mx-auto pl-8 pr-4">
-            <!-- Vertical Line -->
-            <div class="absolute left-8 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+        <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div class="metric-card">
+                <p class="metric-label">Roles Completed</p>
+                <p class="metric-value">{{ experience().length }}</p>
+            </div>
+            <div class="metric-card">
+                <p class="metric-label">Career Started</p>
+                <p class="metric-value">{{ getCareerStart() }}</p>
+            </div>
+            <div class="metric-card">
+                <p class="metric-label">Tech Touched</p>
+                <p class="metric-value">{{ getUniqueTechCount() }}+</p>
+            </div>
+        </div>
 
-            <div class="space-y-12 relative">
+        <div class="timeline-wrap relative mx-auto mt-16 max-w-6xl">
+            <div class="timeline-rail absolute left-5 top-0 bottom-0 w-px md:left-1/2 md:-translate-x-1/2"></div>
+
+            <div class="space-y-10 md:space-y-14">
                 @for (exp of experience(); track exp.id; let i = $index) {
-                <!-- Timeline Item -->
-                <div class="relative pl-12">
+                <article class="timeline-row relative grid grid-cols-1 md:grid-cols-2 md:gap-10">
+                    <div class="timeline-dot absolute left-5 top-8 -translate-x-1/2 md:left-1/2"></div>
 
-                    <!-- Line Dot -->
-                    <div class="absolute -left-[5px] top-0 flex flex-col items-center h-full">
-                        <div class="w-4 h-4 rounded-full border-4 border-brand bg-white dark:bg-gray-900 z-20">
-                        </div>
-                        @if (i !== experience().length - 1) {
-                        <div class="w-1 h-full bg-emerald-600/20 dark:bg-emerald-500/20 -mt-2"></div>
-                        }
-                    </div>
+                    @if (i % 2 === 0) {
+                    <div class="hidden md:block md:pr-14"></div>
+                    }
 
-
-                    <!-- Card -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 md:p-8 animate-fadeInUp border border-gray-100 dark:border-gray-700"
-                        [style.animation-delay]="(i * 100) + 'ms'">
-
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                            <div>
-                                <span
-                                    class="inline-block px-3 py-1 mb-2 text-xs font-bold tracking-widest text-white uppercase bg-brand rounded-full">
-                                    {{ exp.startDate }} - {{ exp.endDate }}
-                                </span>
-                                <h3 class="text-2xl font-bold text-primary dark:text-white mt-1">{{ exp.role }}</h3>
-                                <div class="flex items-center gap-2 mt-2 text-brand dark:text-emerald-400 font-medium">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                        </path>
-                                    </svg>
-                                    {{ exp.company }}
-                                </div>
-                            </div>
-
-                            <div class="mt-4 md:mt-0 flex items-center text-secondary dark:text-gray-400 text-sm">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                    </path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                                {{ exp.location }}
-                            </div>
+                    <div class="timeline-card md:max-w-xl">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="date-pill">{{ exp.startDate }} - {{ exp.endDate }}</span>
+                            @if (isCurrentRole(exp.endDate)) {
+                            <span class="live-pill">Current</span>
+                            }
                         </div>
 
-                        <!-- Details List -->
-                        <ul class="space-y-3 mb-6">
+                        <h3 class="mt-4 text-2xl font-bold text-slate-900 dark:text-white">{{ exp.role }}</h3>
+
+                        <p class="mt-2 inline-flex items-center gap-2 font-medium text-emerald-700 dark:text-emerald-300">
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1" />
+                            </svg>
+                            {{ exp.company }}
+                        </p>
+
+                        <p class="mt-1 inline-flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            {{ exp.location }}
+                        </p>
+
+                        <ul class="mt-5 space-y-3">
                             @for (desc of exp.description; track desc) {
-                            <li class="flex items-start text-secondary dark:text-gray-300 leading-relaxed">
-                                <span class="mr-3 mt-1.5 w-1.5 h-1.5 bg-brand rounded-full flex-shrink-0"></span>
-                                {{ desc }}
+                            <li class="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500"></span>
+                                <span>{{ desc }}</span>
                             </li>
                             }
                         </ul>
 
-                        <!-- Tech Stack -->
-                        <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
-                            <div class="flex flex-wrap gap-2">
-                                @for (tech of exp.technologies; track tech) {
-                                <span
-                                    class="px-3 py-1 text-xs font-semibold text-secondary dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-md">
-                                    {{ tech }}
-                                </span>
-                                }
-                            </div>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            @for (tech of exp.technologies; track tech) {
+                            <span class="tech-chip">{{ tech }}</span>
+                            }
                         </div>
-
                     </div>
-                </div>
+
+                    @if (i % 2 !== 0) {
+                    <div class="hidden md:block md:pl-14"></div>
+                    }
+                </article>
                 }
             </div>
         </div>

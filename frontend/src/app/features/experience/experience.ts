@@ -18,4 +18,24 @@ export class ExperienceComponent implements OnInit {
       error: (err) => console.error('Failed to load experience', err)
     });
   }
+
+  isCurrentRole(endDate: string): boolean {
+    return endDate.toLowerCase() === 'present';
+  }
+
+  getCareerStart(): string {
+    const list = this.experience();
+    if (!list.length) {
+      return '-';
+    }
+
+    return list[list.length - 1].startDate;
+  }
+
+  getUniqueTechCount(): number {
+    const unique = new Set(
+      this.experience().flatMap((item) => item.technologies.map((tech) => tech.toLowerCase()))
+    );
+    return unique.size;
+  }
 }
