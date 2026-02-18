@@ -1,248 +1,117 @@
-<section class="py-24 bg-white dark:bg-gray-900 overflow-hidden">
-    <div class="container mx-auto px-4">
-        <!-- Intro Section -->
-        <div class="flex flex-col lg:flex-row items-center gap-16 mb-24">
-            <!-- Image Column -->
-            <!-- Image Column -->
-            <div class="w-full lg:w-5/12 relative">
-                <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-gray-800">
-                    <img src="/assets/abouted.png" alt="Profile"
-                        class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
-                </div>
-                <!-- Experience Badge -->
-                <div
-                    class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center gap-3">
-                    <div class="bg-brand-light dark:bg-emerald-900 p-3 rounded-full text-brand dark:text-emerald-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="text-xs text-secondary dark:text-gray-400 font-semibold uppercase">Experience</p>
-                        <p class="text-xl font-bold text-primary dark:text-white">1.5+ Years</p>
+<section class="about-shell relative overflow-hidden py-16 md:py-24" id="about">
+    <div class="about-bg absolute inset-0"></div>
+    <div class="absolute -top-28 -left-20 h-96 w-96 rounded-full bg-emerald-500/20 blur-3xl"></div>
+    <div class="absolute -bottom-24 right-0 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl"></div>
+
+    <div class="container relative z-10 mx-auto px-4">
+        <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
+            <div class="lg:col-span-5">
+                <div class="about-photo-wrap">
+                    <img src="/assets/home.png" alt="Profile photo" class="about-photo" />
+                    <div class="about-badge">
+                        <p class="about-badge-label">Current Role</p>
+                        <p class="about-badge-value">{{ profile()?.title || 'Full Stack Developer' }}</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Content Column -->
-            <div class="w-full lg:w-7/12">
-                <span
-                    class="inline-block py-1 px-3 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-brand dark:text-emerald-300 text-sm font-semibold mb-6">
-                    About Me
-                </span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-white mb-6 leading-tight">
-                    Crafting Digital Experiences with <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Passion &
-                        Precision</span>
+            <div class="lg:col-span-7">
+                <span class="about-kicker">About Me</span>
+                <h2 class="mt-4 text-3xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl">
+                    Building Reliable Products
+                    <span class="bg-gradient-to-r from-emerald-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent dark:from-emerald-300 dark:via-cyan-300 dark:to-teal-300">That Users Actually Enjoy</span>
                 </h2>
 
-                <h3 class="text-2xl text-secondary dark:text-gray-200 font-medium mb-6">
-                    {{ profile()?.title }}
-                </h3>
-
-                <p class="text-secondary dark:text-gray-300 leading-relaxed mb-6 text-lg">
-                    {{ profile()?.bio }}
+                <p class="mt-5 text-base leading-relaxed text-slate-600 dark:text-slate-300 md:text-lg">
+                    I am a passionate <span class="about-highlight">Full Stack Developer</span> with experience in
+                    building robust web applications using <span class="about-highlight">Angular</span> and
+                    <span class="about-highlight">ASP.NET Core</span>. I love solving
+                    <span class="about-highlight">complex problems</span> and creating
+                    <span class="about-highlight">efficient, scalable, and user-friendly solutions</span>. With a
+                    strong foundation in both frontend and backend technologies, I can handle the
+                    <span class="about-highlight">entire development lifecycle</span>.
                 </p>
 
-                <p class="text-secondary dark:text-gray-300 leading-relaxed mb-8 text-lg">
-                    I believe in clean code, user-centric design, and continuous learning. My journey started with a
-                    simple "Hello World" and has evolved into building complex, scalable applications for clients
-                    worldwide.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                    <div
-                        class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
-                        <div
-                            class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg text-blue-600 dark:text-blue-400 mr-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-xs text-secondary dark:text-gray-400 font-medium uppercase">Email</p>
-                            <p class="text-primary dark:text-white font-semibold">{{ profile()?.email }}</p>
-                        </div>
+                <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div class="about-contact-card">
+                        <p class="about-contact-label">Email</p>
+                        <p class="about-contact-value break-all">{{ profile()?.email }}</p>
                     </div>
-                    <div
-                        class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
-                        <div
-                            class="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg text-green-600 dark:text-green-400 mr-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-xs text-secondary dark:text-gray-400 font-medium uppercase">Location</p>
-                            <p class="text-primary dark:text-white font-semibold">{{ profile()?.location }}</p>
-                        </div>
+                    <div class="about-contact-card">
+                        <p class="about-contact-label">Location</p>
+                        <p class="about-contact-value">{{ profile()?.location }}</p>
                     </div>
                 </div>
 
-                <a href="/assets/ArafatRahman.pdf" download="ArafatRahman.pdf"
-                    class="btn-brand flex items-center cursor-pointer">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    @for (stat of quickStats; track stat.label) {
+                    <div class="about-stat-card">
+                        <p class="about-stat-value">{{ stat.value }}</p>
+                        <p class="about-stat-label">{{ stat.label }}</p>
+                    </div>
+                    }
+                </div>
+
+                <a href="/assets/ArafatRahman.pdf" download="ArafatRahman.pdf" class="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Download Resume
                 </a>
             </div>
         </div>
 
-        <!-- My Journey & Education Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-            <!-- Education -->
-            <div>
-                <h3 class="text-2xl font-bold text-primary dark:text-white mb-8 flex items-center">
-                    <span
-                        class="w-10 h-10 bg-brand-light dark:bg-emerald-900 rounded-lg flex items-center justify-center text-brand dark:text-emerald-300 mr-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                            <path
-                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
-                            </path>
-                        </svg>
-                    </span>
-                    Education
-                </h3>
-                <div class="space-y-6">
-                    <div
-                        class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border-l-4 border-emerald-500 hover:shadow-md transition">
-                        <h4 class="text-lg font-bold text-primary dark:text-white">B.Sc. in Computer Science &
-                            Engineering</h4>
-                        <p class="text-brand dark:text-emerald-400 font-medium">Southeast University</p>
-                        <p class="text-sm text-secondary dark:text-gray-400 mt-1">2023 - Present</p>
-                        <p class="text-secondary dark:text-gray-300 mt-3 text-sm">Pursuing Bachelor's degree with a
-                            focus
-                            on advanced software engineering principles.</p>
-                    </div>
-                    <div
-                        class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border-l-4 border-teal-500 hover:shadow-md transition">
-                        <h4 class="text-lg font-bold text-primary dark:text-white">Diploma in Computer Science &
-                            Technology</h4>
-                        <p class="text-brand dark:text-emerald-400 font-medium">Khulna Polytechnic Institute</p>
-                        <p class="text-sm text-secondary dark:text-gray-400 mt-1">2022</p>
-                        <p class="text-secondary dark:text-gray-300 mt-3 text-sm">Completed diploma with strong
-                            foundation in computer science fundamentals.</p>
-                    </div>
-                    <div
-                        class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border-l-4 border-pink-500 hover:shadow-md transition">
-                        <h4 class="text-lg font-bold text-primary dark:text-white">Secondary School Certificate (SSC)
-                        </h4>
-                        <p class="text-brand dark:text-emerald-400 font-medium">Kakbasia Bangabandhu Secondary
-                            School</p>
-                        <p class="text-sm text-secondary dark:text-gray-400 mt-1">2017</p>
-                        <p class="text-secondary dark:text-gray-300 mt-3 text-sm">Completed secondary education with
-                            excellent academic performance.</p>
-                    </div>
+        <div class="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+            <div class="lg:col-span-4 about-panel">
+                <h3 class="about-panel-title">Focus Areas</h3>
+                <ul class="mt-5 space-y-3">
+                    @for (item of focusAreas; track item) {
+                    <li class="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500"></span>
+                        <span>{{ item }}</span>
+                    </li>
+                    }
+                </ul>
+            </div>
+
+            <div class="lg:col-span-4 about-panel">
+                <h3 class="about-panel-title">Education</h3>
+                <div class="mt-5 space-y-4">
+                    @for (item of education; track item.degree) {
+                    <article class="about-mini-card">
+                        <p class="about-mini-title">{{ item.degree }}</p>
+                        <p class="about-mini-sub">{{ item.institute }}</p>
+                        <p class="about-mini-time">{{ item.year }}</p>
+                        <p class="about-mini-desc">{{ item.summary }}</p>
+                    </article>
+                    }
                 </div>
             </div>
 
-            <!-- Experience / Journey -->
-            <div>
-                <h3 class="text-2xl font-bold text-primary dark:text-white mb-8 flex items-center">
-                    <span
-                        class="w-10 h-10 bg-teal-100 dark:bg-teal-900 rounded-lg flex items-center justify-center text-teal-600 dark:text-teal-300 mr-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                            </path>
-                        </svg>
-                    </span>
-                    My Journey
-                </h3>
-                <div class="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 space-y-8">
-                    <div class="ml-8 relative">
-                        <span
-                            class="absolute -left-11 top-1 w-6 h-6 bg-brand rounded-full border-4 border-white dark:border-gray-900"></span>
-                        <h4 class="text-lg font-bold text-primary dark:text-white">Junior Developer</h4>
-                        <p class="text-sm text-secondary dark:text-gray-400 mb-2">July 2025 - Present</p>
-                        <p class="text-secondary dark:text-gray-300 text-sm">Hybritech Innovations Ltd. - Working with
-                            Angular, React, Laravel, and OData to develop web applications.</p>
-                    </div>
-                    <div class="ml-8 relative">
-                        <span
-                            class="absolute -left-11 top-1 w-6 h-6 bg-teal-500 rounded-full border-4 border-white dark:border-gray-900"></span>
-                        <h4 class="text-lg font-bold text-primary dark:text-white">Software Engineer</h4>
-                        <p class="text-sm text-secondary dark:text-gray-400 mb-2">July 2024 - Dec 2024</p>
-                        <p class="text-secondary dark:text-gray-300 text-sm">US Software Limited - Working on ASP.NET,
-                            C#, and Angular to develop web applications.</p>
-                    </div>
-                    <div class="ml-8 relative">
-                        <span
-                            class="absolute -left-11 top-1 w-6 h-6 bg-gray-400 rounded-full border-4 border-white dark:border-gray-900"></span>
-                        <h4 class="text-lg font-bold text-primary dark:text-white">Software Testing Specialist</h4>
-                        <p class="text-sm text-secondary dark:text-gray-400 mb-2">Jan 2023 - June 2024</p>
-                        <p class="text-secondary dark:text-gray-300 text-sm">Bio-Xin Cosmeceuticals - Experienced in API
-                            testing, ensuring seamless communication between services.</p>
-                    </div>
+            <div class="lg:col-span-4 about-panel">
+                <h3 class="about-panel-title">Career Journey</h3>
+                <div class="mt-5 space-y-4">
+                    @for (item of journey; track item.role) {
+                    <article class="about-mini-card">
+                        <p class="about-mini-title">{{ item.role }}</p>
+                        <p class="about-mini-sub">{{ item.company }}</p>
+                        <p class="about-mini-time">{{ item.period }}</p>
+                        <p class="about-mini-desc">{{ item.details }}</p>
+                    </article>
+                    }
                 </div>
             </div>
         </div>
 
-        <!-- Personal Interests -->
-        <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl p-10 text-center">
-            <h3 class="text-2xl font-bold text-primary dark:text-white mb-8">Beyond Coding</h3>
-            <div class="flex flex-wrap justify-center gap-8">
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center text-red-500 mb-3 group-hover:scale-110 transition duration-300">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
-                    <span class="font-medium text-secondary dark:text-gray-300">Photography</span>
+        <div class="mt-8 about-panel">
+            <h3 class="about-panel-title text-center">Beyond Coding</h3>
+            <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                @for (item of interests; track item) {
+                <div class="about-interest-item">
+                    {{ item }}
                 </div>
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center text-green-500 mb-3 group-hover:scale-110 transition duration-300">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                            </path>
-                        </svg>
-                    </div>
-                    <span class="font-medium text-secondary dark:text-gray-300">Traveling</span>
-                </div>
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center text-yellow-500 mb-3 group-hover:scale-110 transition duration-300">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
-                            </path>
-                        </svg>
-                    </div>
-                    <span class="font-medium text-secondary dark:text-gray-300">Reading</span>
-                </div>
-                <div class="flex flex-col items-center group">
-                    <div
-                        class="w-16 h-16 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center text-teal-500 mb-3 group-hover:scale-110 transition duration-300">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <span class="font-medium text-secondary dark:text-gray-300">Gaming</span>
-                </div>
+                }
             </div>
         </div>
     </div>
