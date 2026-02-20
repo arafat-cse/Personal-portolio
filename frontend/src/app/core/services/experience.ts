@@ -19,10 +19,24 @@ export class ExperienceService {
 
   private mockExperience: Experience[] = [
     {
+      id: 0,
+      role: 'Software Engineer',
+      company: 'Mandsitbd.com',
+      location: 'Mirpur, Dhaka, Bangladesh',
+      startDate: 'January 2026',
+      endDate: 'Present',
+      description: [
+        'Working with Angular, React, Next.js, Laravel, Strapi and Node.js to develop web applications.',
+        'Collaborating with cross-functional teams to deliver high-quality software solutions.',
+        'Participating in code reviews and contributing to architectural decisions.'
+      ],
+      technologies: ['Angular', 'React', 'Next.js', 'Laravel', 'Strapi', 'Node.js']
+    },
+    {
       id: 1,
       role: 'Junior Developer',
       company: 'Hybritech Innovations Ltd.',
-      location: 'Dhaka, Bangladesh',
+      location: 'Banasree Rampura, Dhaka, Bangladesh',
       startDate: 'July 2025',
       endDate: 'Present',
       description: [
